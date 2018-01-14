@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Python Flask Blog App</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation" class="active"><a href="#">Dashboard</a></li>
+                    <li role="presentation"><a href="/userHome">My List</a></li>
+                    <li role="presentation"><a href="/showAddBlog">Add Item</a></li>
+                    <li role="presentation"><a href="/logout">Logout</a></li>
+                </ul>
+            </nav>
+
+            <!-- <img src="/static/images/blog.jpg" alt="blog.jpg"/ > -->
+        </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1 style="text-align:center">This the Dashboard! All blogs will be avilable here...</h1>
+<br>
+
+            <div>
+                {% for post in posts %}
+                <a href="{{ url_for('post', pid=post[0]) }}">
+                  <h2 class="post-title"><font color="green">{{ post[1] }}</font></h2></a>
+                <hr>
+                {% endfor %}
+            </div>
+
+
+        <!-- <div>
+            <footer class="footer">
+                <p>©Copyright 2017</p>
+            </footer>
+
+        </div> -->
+</body>
+
+</html>
